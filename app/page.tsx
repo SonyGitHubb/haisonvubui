@@ -97,14 +97,6 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection delay={0.1}>
-          <div className="flex justify-center mb-6">
-            <div className="w-96 h-96 overflow-hidden shadow-2xl bg-gray-800 rounded-lg">
-              <img src="/profile.JPG" alt="Hai Son Vu Bui" className="w-full h-full object-cover" />
-            </div>
-          </div>
-        </AnimatedSection>
-
         <AnimatedSection delay={0.2}>
           <div className="flex justify-center mb-4">
             {SOCIALS.map(({ icon, url }) => (
