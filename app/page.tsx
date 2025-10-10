@@ -62,25 +62,12 @@ function AnimatedSection({ children, delay = 0 }: { children: React.ReactNode; d
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
-      {
-        threshold: 0.1,
-        rootMargin: '0px'
-      }
+      { threshold: 0.1 }
     );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
+    if (ref.current) observer.observe(ref.current);
+    return () => { if (ref.current) observer.unobserve(ref.current); };
   }, []);
 
   return (
@@ -100,48 +87,44 @@ function AnimatedSection({ children, delay = 0 }: { children: React.ReactNode; d
 export default function Home() {
   const [lang, setLang] = useState<'en' | 'cs'>('en');
   const t = content[lang];
-  
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-4 py-8" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
       <div className="w-full max-w-2xl bg-black bg-opacity-80 rounded-lg shadow-lg p-8">
         <AnimatedSection>
           <div className="flex flex-col items-center mb-6">
-            <div className="mb-4 flex justify-center">
-              <div
-                className={`relative w-24 h-10 rounded-full flex items-center cursor-pointer select-none border border-[#444] shadow-lg ${lang === 'cs' ? '' : 'bg-gradient-to-r from-[#232323] to-[#2c2c2c]'}`}
-                style={{ background: lang === 'cs' ? '#fff' : undefined, transition: 'background 0.3s' }}
-                onClick={() => setLang(lang === 'en' ? 'cs' : 'en')}
-                aria-label="Switch language"
-              >
-                <span className={`absolute left-3 top-1/2 transform -translate-y-1/2 text-base font-bold transition-opacity ${lang === 'en' ? 'text-white opacity-100' : 'text-black opacity-50'}`}>EN</span>
-                <span className={`absolute right-3 top-1/2 transform -translate-y-1/2 text-base font-bold transition-opacity ${lang === 'cs' ? 'text-black opacity-100' : 'text-white opacity-50'}`}>CS</span>
-                <span
-                  className={`absolute top-1/2 transform -translate-y-1/2 transition-all duration-300 rounded-full bg-gradient-to-b from-white to-gray-200 w-10 h-10 shadow-lg border border-[#bbb] ${lang === 'en' ? 'left-0' : 'right-0'}`}
-                  style={{ boxShadow: '0 2px 12px #0004' }}
-                />
-              </div>
-            </div>
-            <h1 className="text-4xl font-bold" style={{ fontFamily: 'Inter, sans-serif' }}>Hai Son Vu Bui</h1>
+            <h1 className="text-4xl font-bold mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Hai Son Vu Bui</h1>
           </div>
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
           <div className="flex justify-center mb-6">
             <div className="w-96 h-96 overflow-hidden shadow-2xl bg-gray-800 rounded-lg">
-              <img 
-                src="/profile.JPG" 
-                alt="Hai Son Vu Bui" 
-                className="w-full h-full object-cover"
-              />
+              <img src="/profile.JPG" alt="Hai Son Vu Bui" className="w-full h-full object-cover" />
             </div>
           </div>
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-4">
             {SOCIALS.map(({ icon, url }) => (
               <SocialIcon key={icon} icon={icon} url={url} />
             ))}
+          </div>
+          <div className="flex justify-center mb-8">
+            <div
+              className={`relative w-24 h-10 rounded-full flex items-center cursor-pointer select-none border border-[#444] shadow-lg ${lang === 'cs' ? '' : 'bg-gradient-to-r from-[#232323] to-[#2c2c2c]'}`}
+              style={{ background: lang === 'cs' ? '#fff' : undefined, transition: 'background 0.3s' }}
+              onClick={() => setLang(lang === 'en' ? 'cs' : 'en')}
+              aria-label="Switch language"
+            >
+              <span className={`absolute left-3 top-1/2 transform -translate-y-1/2 text-base font-bold transition-opacity ${lang === 'en' ? 'text-white opacity-100' : 'text-black opacity-50'}`}>EN</span>
+              <span className={`absolute right-3 top-1/2 transform -translate-y-1/2 text-base font-bold transition-opacity ${lang === 'cs' ? 'text-black opacity-100' : 'text-white opacity-50'}`}>CS</span>
+              <span
+                className={`absolute top-1/2 transform -translate-y-1/2 transition-all duration-300 rounded-full bg-gradient-to-b from-white to-gray-200 w-10 h-10 shadow-lg border border-[#bbb] ${lang === 'en' ? 'left-0' : 'right-0'}`}
+                style={{ boxShadow: '0 2px 12px #0004' }}
+              />
+            </div>
           </div>
         </AnimatedSection>
 
@@ -157,11 +140,7 @@ export default function Home() {
             <h2 className="text-2xl font-semibold mb-2">{lang === 'en' ? 'Skills' : 'Dovednosti'}</h2>
             <div className="flex flex-wrap gap-2">
               {t.skills.map(skill => (
-                <span
-                  key={skill}
-                  className="rounded-lg px-8 py-4 text-lg font-semibold"
-                  style={{ background: '#363636', color: '#fff', display: 'inline-block', minWidth: '80px', textAlign: 'center' }}
-                >
+                <span key={skill} className="rounded-lg px-8 py-4 text-lg font-semibold" style={{ background: '#363636', color: '#fff', minWidth: '80px', textAlign: 'center' }}>
                   {skill}
                 </span>
               ))}
@@ -174,11 +153,7 @@ export default function Home() {
             <h2 className="text-2xl font-semibold mb-2">{lang === 'en' ? 'Soft Skills' : 'Měkké dovednosti'}</h2>
             <div className="flex flex-wrap gap-2">
               {['Communication', 'Teamwork', 'Problem-solving', 'Time management'].map(soft => (
-                <span
-                  key={soft}
-                  className="rounded-lg px-8 py-4 text-lg font-semibold"
-                  style={{ background: '#fff', color: '#000', display: 'inline-block', minWidth: '120px', textAlign: 'center', border: '1px solid #363636' }}
-                >
+                <span key={soft} className="rounded-lg px-8 py-4 text-lg font-semibold" style={{ background: '#fff', color: '#000', minWidth: '120px', textAlign: 'center', border: '1px solid #363636' }}>
                   {soft}
                 </span>
               ))}
@@ -186,7 +161,7 @@ export default function Home() {
           </section>
         </AnimatedSection>
 
-        <AnimatedSection delay={0.5}>
+        <AnimatedSection delay={0.6}>
           <section className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">{lang === 'en' ? 'Certificate' : 'Certifikát'}</h2>
             <ul className="list-disc list-inside">
@@ -197,7 +172,7 @@ export default function Home() {
           </section>
         </AnimatedSection>
 
-        <AnimatedSection delay={0.6}>
+        <AnimatedSection delay={0.7}>
           <section className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">{lang === 'en' ? 'Education' : 'Vzdělání'}</h2>
             <ul className="list-disc list-inside">
@@ -208,7 +183,7 @@ export default function Home() {
           </section>
         </AnimatedSection>
 
-        <AnimatedSection delay={0.7}>
+        <AnimatedSection delay={0.8}>
           <footer className="text-center text-sm text-gray-400 mt-8">
             {t.copyright}
           </footer>
