@@ -127,20 +127,32 @@ export default function Home() {
 
         <AnimatedSection delay={0.1}>
           <div className="flex justify-center mb-6">
+            <div className="w-96 h-96 overflow-hidden shadow-2xl bg-gray-800 rounded-lg">
+              <img 
+                src="/profile.JPG" 
+                alt="Hai Son Vu Bui" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.2}>
+          <div className="flex justify-center mb-6">
             {SOCIALS.map(({ icon, url }) => (
               <SocialIcon key={icon} icon={icon} url={url} />
             ))}
           </div>
         </AnimatedSection>
 
-        <AnimatedSection delay={0.2}>
+        <AnimatedSection delay={0.3}>
           <section className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">{lang === 'en' ? 'About Me' : 'O mně'}</h2>
             <p className="text-lg">{t.about}</p>
           </section>
         </AnimatedSection>
 
-        <AnimatedSection delay={0.3}>
+        <AnimatedSection delay={0.4}>
           <section className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">{lang === 'en' ? 'Skills' : 'Dovednosti'}</h2>
             <div className="flex flex-wrap gap-2">
@@ -157,7 +169,7 @@ export default function Home() {
           </section>
         </AnimatedSection>
 
-        <AnimatedSection delay={0.4}>
+        <AnimatedSection delay={0.5}>
           <section className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">{lang === 'en' ? 'Soft Skills' : 'Měkké dovednosti'}</h2>
             <div className="flex flex-wrap gap-2">
