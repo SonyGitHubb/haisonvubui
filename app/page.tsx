@@ -10,7 +10,7 @@ const SOCIALS = [
 
 const content = {
   en: {
-    about: "Hi, I'm Hai Son Vu Bui – a recent EDUCAnet High School graduate with a focus on IT. I'm passionate about technology, web development, and continuous learning. Currently, I'm studying Artificial Intelligence at Unicorn University to expand my skills. I'm eager to grow in a dynamic environment where I can apply my knowledge and make an impact.",
+    about: "Hi, I'm Hai Son Vu Bui – a recent EDUCAnet High School graduate with a focus on IT. Currently, I'm studying Artificial Intelligence at Unicorn University.",
     skills: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Python", "SQL", "Java", "HTML", "CSS"],
     certificate: [
       "Program Participation - EY",
@@ -21,7 +21,7 @@ const content = {
     copyright: "© 2026 Hai Son Vu Bui. All rights reserved.",
   },
   cs: {
-    about: "Ahoj, jsem Hai Son Vu Bui – čerstvý absolvent střední školy EDUCAnet se zaměřením na IT. Jsem nadšený do technologií, webového vývoje a neustálého vzdělávání. Aktuálně studuji umělou inteligenci na Unicorn University, abych rozšířil své dovednosti. Chci růst v dynamickém prostředí, kde mohu uplatnit své znalosti a mít skutečný dopad.",
+    about: "Ahoj, jsem Hai Son Vu Bui – čerstvý absolvent střední školy EDUCAnet se zaměřením na IT. Aktuálně studuji umělou inteligenci na Unicorn University.",
     skills: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Python", "SQL", "Java", "HTML", "CSS"],
     certificate: [
       "Účast v programu - EY",
