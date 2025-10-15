@@ -10,7 +10,7 @@ const SOCIALS = [
 
 const content = {
   en: {
-    about: "Hi, I'm Hai Son Vu Bui – a recent EDUCAnet High School graduate with a focus on IT. Currently, I'm studying Artificial Intelligence at Unicorn University.",
+    about: "Hi, I'm Hai Son Vu Bui, EDUCAnet High School graduate with a focus on IT. Currently, I'm studying Artificial Intelligence at Unicorn University.",
     skills: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Python", "SQL", "Java", "HTML", "CSS"],
     certificate: [
       "Program Participation - EY",
