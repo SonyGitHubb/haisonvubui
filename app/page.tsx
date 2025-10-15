@@ -21,7 +21,7 @@ const content = {
     copyright: "© 2026 Hai Son Vu Bui. All rights reserved.",
   },
   cs: {
-    about: "Ahoj, jsem Hai Son Vu Bui – čerstvý absolvent střední školy EDUCAnet se zaměřením na IT. Aktuálně studuji umělou inteligenci na Unicorn University.",
+    about: "Ahoj, jsem Hai Son Vu Bui absolvent střední školy EDUCAnet se zaměřením na IT. Aktuálně studuji umělou inteligenci na Unicorn University.",
     skills: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Python", "SQL", "Java", "HTML", "CSS"],
     certificate: [
       "Účast v programu - EY",
@@ -129,7 +129,7 @@ export default function Home() {
 
         <AnimatedSection delay={0.4}>
           <section className="mb-6">
-            <h2 className="text-2xl font-semibold mb-2">{lang === 'en' ? 'Skills' : 'Dovednosti'}</h2>
+            <h2 className="text-2xl font-semibold mb-2">{lang === 'en' ? 'Skills' : 'Skills'}</h2>
             <div className="flex flex-wrap gap-2">
               {t.skills.map(skill => (
                 <span key={skill} className="rounded-lg px-8 py-4 text-lg font-semibold" style={{ background: '#363636', color: '#fff', minWidth: '80px', textAlign: 'center' }}>
@@ -142,7 +142,7 @@ export default function Home() {
 
         <AnimatedSection delay={0.5}>
           <section className="mb-6">
-            <h2 className="text-2xl font-semibold mb-2">{lang === 'en' ? 'Soft Skills' : 'Měkké dovednosti'}</h2>
+            <h2 className="text-2xl font-semibold mb-2">{lang === 'en' ? 'Soft Skills' : 'Soft Skills'}</h2>
             <div className="flex flex-wrap gap-2">
               {['Communication', 'Teamwork', 'Problem-solving', 'Time management'].map(soft => (
                 <span key={soft} className="rounded-lg px-8 py-4 text-lg font-semibold" style={{ background: '#fff', color: '#000', minWidth: '120px', textAlign: 'center', border: '1px solid #363636' }}>
@@ -155,7 +155,7 @@ export default function Home() {
 
         <AnimatedSection delay={0.6}>
           <section className="mb-6">
-            <h2 className="text-2xl font-semibold mb-2">{lang === 'en' ? 'Certificate' : 'Certifikát'}</h2>
+            <h2 className="text-2xl font-semibold mb-2">{lang === 'en' ? 'Certificates' : 'Certifikáty'}</h2>
             <ul className="list-disc list-inside">
               {Array.isArray(t.certificate)
                 ? t.certificate.map((cert: string) => <li key={cert}>{cert}</li>)
