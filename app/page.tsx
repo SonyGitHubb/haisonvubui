@@ -93,7 +93,7 @@ export default function Home() {
       <div className="w-full max-w-2xl bg-black bg-opacity-80 rounded-lg shadow-lg p-8">
         <AnimatedSection>
           <div className="flex flex-col items-center mb-6">
-            <h1 className="text-4xl font-bold mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Hai Son Vu Bui</h1>
+            <h1 className="text-4xl font-bold mb-4">Hai Son Vu Bui</h1>
           </div>
         </AnimatedSection>
 
@@ -122,7 +122,7 @@ export default function Home() {
 
         <AnimatedSection delay={0.3}>
           <section className="mb-6">
-            <h2 className="text-2xl font-semibold mb-2">{lang === 'en' ? 'About Me' : 'O mně'}</h2>
+            <h2 className="text-2xl font-semibold mb-2">{lang === 'en' ? 'About Me' : 'About Me'}</h2>
             <p className="text-lg">{t.about}</p>
           </section>
         </AnimatedSection>
